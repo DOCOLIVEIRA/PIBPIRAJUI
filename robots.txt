@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pib-pirajui.vercel.app/sitemap.xml

@@ -1,0 +1,12 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: pib-pirajui-web
+    environment:
+      - TZ=BRT3
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./scripts/40-youtube-cron.sh:/docker-entrypoint.d/40-youtube-cron.sh:ro
+    restart: unless-stopped
