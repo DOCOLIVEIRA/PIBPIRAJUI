@@ -2,11 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=$HOME/public_html/
-    - /bin/cp -f .htaccess $DEPLOYPATH
-    - /bin/cp -f index.html $DEPLOYPATH
-    - /bin/cp -f style.css $DEPLOYPATH
-    - /bin/cp -f script.js $DEPLOYPATH
-    - /bin/cp -f update-youtube.php $DEPLOYPATH
-    - /bin/cp -f robots.txt $DEPLOYPATH
-    - /bin/cp -f sitemap.xml $DEPLOYPATH
+    - /bin/cp -f .htaccess index.html style.css script.js update-youtube.php robots.txt sitemap.xml $DEPLOYPATH
     - /bin/cp -Rf assets $DEPLOYPATH
+    - if [ -d "$HOME/pibpirajui.com.br" ]; then /bin/cp -f .htaccess index.html style.css script.js update-youtube.php robots.txt sitemap.xml "$HOME/pibpirajui.com.br/" && /bin/cp -Rf assets "$HOME/pibpirajui.com.br/"; fi
+    - if [ -d "$HOME/public_html/pibpirajui.com.br" ]; then /bin/cp -f .htaccess index.html style.css script.js update-youtube.php robots.txt sitemap.xml "$HOME/public_html/pibpirajui.com.br/" && /bin/cp -Rf assets "$HOME/public_html/pibpirajui.com.br/"; fi
